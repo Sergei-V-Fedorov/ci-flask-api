@@ -59,7 +59,7 @@ async def recipe_detail(recipe_id: int) -> Optional[schemas.RecipeBase]:
     recipe = await session.get(Recipe, recipe_id)
 
     if recipe is None:
-        return
+        return None
 
     recipe.view_count += 1
     await session.commit()

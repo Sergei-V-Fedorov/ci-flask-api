@@ -46,6 +46,7 @@ class Recipe(RecipeBase):
 
 class RecipeBrief(BaseModel):
     """Сокращенная схема для сериализации списка рецептов."""
+
     name: str = Field(description="Название рецепта")
     cook_time: int = Field(description="Время приготовления в минутах")
     view_count: int = Field(description="Количество просмотров")

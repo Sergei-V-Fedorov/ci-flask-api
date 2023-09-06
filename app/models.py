@@ -24,20 +24,22 @@ association_table = Table(
 class Recipe(Base):
     """Модель для описания рецептов."""
 
-    __tablename__ = 'recipes'
+    __tablename__ = "recipes"
 
     id = Column(Integer, primary_key=True, index=True)
     name = Column(String(256), nullable=False)
     cook_time = Column(Integer, nullable=False)
     view_count = Column(Integer, default=0)
-    description = Column(String, default='')
-    components = relationship("Component", secondary=association_table, backref="recipes")
+    description = Column(String, default="")
+    components = relationship(
+        "Component", secondary=association_table, backref="recipes"
+    )
 
 
 class Component(Base):
     """Модель для описания ингредиентов."""
 
-    __tablename__ = 'components'
+    __tablename__ = "components"
 
     id = Column(Integer, primary_key=True, index=True)
     name = Column(String(128), nullable=False)

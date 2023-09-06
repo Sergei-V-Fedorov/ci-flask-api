@@ -15,7 +15,13 @@ async def insert_data():
     component_4 = models.Component(id=4, name="Помидоры")
     component_5 = models.Component(id=5, name="Колбаса")
 
-    components = [component_1, component_2, component_3, component_4, component_5]
+    components = [
+        component_1,
+        component_2,
+        component_3,
+        component_4,
+        component_5
+    ]
 
     recipe_1 = models.Recipe(
         id=1,

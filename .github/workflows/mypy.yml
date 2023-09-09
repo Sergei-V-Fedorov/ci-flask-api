@@ -20,6 +20,6 @@ jobs:
         pip install mypy sqlalchemy[mypy]
     - name: Analysing the code with mypy
       run: |
-        mypy --ignore-missing-imports /
-        --follow-imports=skip /
+        mypy --ignore-missing-imports \
+        --follow-imports=skip \
         --strict-optional $(git ls-files '*.py')

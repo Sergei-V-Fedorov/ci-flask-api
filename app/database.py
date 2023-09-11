@@ -4,6 +4,7 @@
 Описывает БД и определяет асинхронную сессию для
 подсоединения к ней.
 """
+import os
 
 from sqlalchemy.ext.asyncio import (
     create_async_engine,
@@ -12,7 +13,11 @@ from sqlalchemy.ext.asyncio import (
 )
 from sqlalchemy.ext.declarative import declarative_base
 
-DATABASE_URL = "sqlite+aiosqlite:///../app.db"
+current_dir = os.path.dirname(__file__)
+parent_dir = os.path.dirname(current_dir)
+db_file = os.path.join(parent_dir, 'app.db')
+
+DATABASE_URL = f"sqlite+aiosqlite:///{db_file}"
 
 engine = create_async_engine(DATABASE_URL, echo=True)
 # expire_on_commit=False will prevent attributes from being expired

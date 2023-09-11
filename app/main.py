@@ -19,6 +19,7 @@ from app.database import engine, session
 from app.models import Recipe, Base
 import app.schemas as schemas
 
+
 app = FastAPI(title="RecipeBook")
 
 
